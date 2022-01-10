@@ -1,31 +1,35 @@
 import React from "react";
-
 import ReactDom from 'react-dom';
 
+//CSS
+import './index.css'
 
-function Greeting() {
+
+function Booklist() {
   return (
-    <div>
-      <Person/>
-      <Message/>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       
-    </div>
-
+    </section>
   );
 }
 
-const Person = () => <h2>John Doe</h2>
 
-const Message = () => {
+const Book = () => {
   return (
-    <div>
-      <p>This is my message</p>
-   
-    </div>
-  )
+    <article className="book">
+      <Image />
+      <Title />
+      <Author/>
+      
+    </article>
+
+  );
 }
-
-
-
-
-ReactDom.render(<Greeting/>,document.getElementById('root'));
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL200_SR200,200_.jpg" alt="" />
+const Title = () => <h1>I Love You to the Moon and Back</h1>
+const Author =()=><h4 style={{color:'red'}}>Amelia Hepworth</h4>
+ReactDom.render(<Booklist/>,document.getElementById('root'));
