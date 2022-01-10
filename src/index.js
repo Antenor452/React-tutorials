@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import ReactDom from 'react-dom';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+function Greeting() {
+  return (
+    <div>
+      <Person/>
+      <Message/>
+      
+    </div>
+
+  );
+}
+
+const Person = () => <h2>John Doe</h2>
+
+const Message = () => {
+  return (
+    <div>
+      <p>This is my message</p>
+   
+    </div>
+  )
+}
+
+
+
+
+ReactDom.render(<Greeting/>,document.getElementById('root'));
